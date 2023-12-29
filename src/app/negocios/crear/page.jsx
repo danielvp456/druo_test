@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-function crearNegocios() {
+function CrearNegocios() {
 
     const [newBusiness, setNewBusiness] = useState({
         name: "",
@@ -73,4 +73,4 @@ function crearNegocios() {
     )
 }
 
-export default crearNegocios
+export default CrearNegocios
