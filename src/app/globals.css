@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply bg-gray-950 text-white;
+}
+
+.layout{
+  display: flex;
+  height: 100vh;
+  position: relative;
+  gap: 2rem;
+}
+
+.sidebar{
+  width: 17rem;
+  height: 100%;
+  padding: 1rem;
+  transition: all 0.3s linear;
+}
+
+.sidebar_list{
+  list-style: none;
+}
+
+.sidebar_link{
+  display: inline-block;
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+  padding: 0.8rem 1rem;
+  display: flex;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+}
