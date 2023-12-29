@@ -20,7 +20,7 @@ function CrearNegocios() {
             method: "POST",
             body: JSON.stringify(newBusiness),
             headers: {
-                "conten-type": "application/json"
+                "Content-Type": "application/json"
             }
         })
         const data = await res.json();
