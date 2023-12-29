@@ -9,6 +9,7 @@ export async function connectDb(){
     
     const db = await connect('mongodb+srv://danielvp456:LRYkiR7xtjhit2aL@cluster0.ettfkq6.mongodb.net/?retryWrites=true&w=majority')
     conn.isConnected = db.connections[0].readyState
+    console.log("Db Connected: " + conn.isConnected)
 }
 
 connection.on('connected', () => {
