@@ -1,3 +1,4 @@
+"use client"
 import Negocios from "./negocios/page"
 
 async function Home() {

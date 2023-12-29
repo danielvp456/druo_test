@@ -1,20 +1,36 @@
-import { React } from "react";
-
+"use client"
+import { React, useState, useEffect } from "react";
 import EmptyBusiness from "@/components/EmptyBusiness";
 
-import { connectDb } from "@/utils/mongoDb";
-import Business from "@/models/business";
 
-async function loadBusiness() {
-    connectDb();
-    const business = await Business.find();
-    return business
-}
+function Negocios() {
 
+    const [business, setBusiness] = useState([]);
 
-async function Negocios() {
+    const fetchData = async () => {
+        try {
+            const res = await fetch('/api/business', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
 
-    const business = await loadBusiness();
+            if (res.ok) {
+                const data = await res.json();
+                setBusiness(data.myBusiness);
+            } else {
+                console.error('Error al obtener los datos del negocio');
+            }
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     if (business.length === 0) {
         return <EmptyBusiness />;
     }
